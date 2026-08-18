@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pyquicktli"
+name = "pyquicktui"
 version = "0.1.0"
 description = "Py Quick TLI is a utility tool for quickly creating CLI / TLI functionality."
 readme = "README.md"
@@ -18,4 +18,4 @@ Homepage = "https://github.com/lganic/Py-Quick-TUI/main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["pyquicktli"]
+include = ["pyquicktui"]

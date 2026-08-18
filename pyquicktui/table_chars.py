@@ -86,10 +86,10 @@ _CORNER_TABLE = {
 def get_connected_char(top_connected: bool, bottom_connected: bool, left_connected: bool, right_connected: bool, detail: DetailMode = DetailMode.BASIC):
 
     index = \
-        1 if top_connected    else 0 + \
-        2 if right_connected  else 0 + \
-        4 if bottom_connected else 0 + \
-        8 if left_connected   else 0
+        (1 if top_connected    else 0) + \
+        (2 if right_connected  else 0) + \
+        (4 if bottom_connected else 0) + \
+        (8 if left_connected   else 0)
     
     return _CORNER_TABLE[detail][index]
 
