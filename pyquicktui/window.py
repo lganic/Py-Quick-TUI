@@ -19,6 +19,8 @@ class Window:
 
         self.detail = detail
 
+        self._owns_curses = root is None
+
         if root is not None and fullscreen:
 
             raise ValueError("Attempted to make a non root window fullscreen.")
@@ -60,15 +62,15 @@ class Window:
         if self._win is None:
             return
 
-        if self._win is _curses_stdscr:
+        self._win = None
+
+        if self._owns_curses and _curses_stdscr is not None:
             curses.nocbreak()
             _curses_stdscr.keypad(False)
             curses.echo()
             curses.endwin()
 
             _curses_stdscr = None
-
-        self._win = None
 
     def render(self, frame_count: int): # Frame count is used for animated elements.
 
